@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ChatGPT Capitalizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ChatGPT Capitalizer</h1>
+        </div>
+        <div class="chat-container">
+            <div class="chat-box" id="chat-box">
+                <div class="message bot">Enter a paragraph to capitalize:</div>
+            </div>
+            <div class="user-input">
+                <textarea id="input-text" placeholder="Type your paragraph here..."></textarea>
+                <button onclick="capitalize()">Capitalize</button>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
