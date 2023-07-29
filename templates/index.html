@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>GT summarize</title>
+    <title>GT Summarizer</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>GT Summerizer</h1>
+            <h1>GT Summarizer</h1>
         </div>
         <div class="chat-container">
             <div class="chat-box" id="chat-box">
@@ -15,10 +15,10 @@
             </div>
             <div class="user-input">
                 <textarea id="input-text" placeholder="Type your paragraph here..."></textarea>
-                <button onclick="summarize()">Capitalize</button>
+                <button onclick="summarize()">Summarize</button> <!-- Changed the button label to "Summarize" -->
             </div>
         </div>
     </div>
-    <script src="static/script.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script> <!-- Corrected the path to the script.js file -->
 </body>
 </html>
