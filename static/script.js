@@ -1,4 +1,4 @@
-function capitalize() {
+function summarize() {
     // Get the input text from the textarea
     const inputText = document.getElementById("input-text").value;
 
@@ -13,7 +13,7 @@ function capitalize() {
     })
     .then(response => response.json())
     .then(data => {
-        // Display the capitalized text in the chat box
+        // Display the summerized text in the chat box
         const chatBox = document.getElementById("chat-box");
         chatBox.innerHTML += `<div class="message user">You: ${inputText}</div>`;
         chatBox.innerHTML += `<div class="message bot">Bot: ${data.capitalized_text}</div>`;
