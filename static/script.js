@@ -13,14 +13,14 @@ function summarize() {
     })
     .then(response => response.json())
     .then(data => {
-        // Display the summerized text in the chat box
+        // Display the summarized text in the chat box
         const chatBox = document.getElementById("chat-box");
         chatBox.innerHTML += `<div class="message user">You: ${inputText}</div>`;
-        chatBox.innerHTML += `<div class="message bot">Bot: ${data.capitalized_text}</div>`;
+        chatBox.innerHTML += `<div class="message bot">Bot: ${data.summarized_text}</div>`; // Changed from "data.capitalized_text" to "data.summarized_text"
 
         // Scroll to the bottom of the chat box
         chatBox.scrollTop = chatBox.scrollHeight;
-        
+
         // Clear the input textarea
         document.getElementById("input-text").value = "";
     })
