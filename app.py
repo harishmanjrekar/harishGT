@@ -12,12 +12,12 @@ def index():
     if request.method == "POST":
         paragraph = request.form.get("paragraph")
         # Use the summarization pipeline to generate the summary
-        summarized_text = generate_summary(paragraph, max_length=200, min_length=50)
+        summarized_text = generate_summary(paragraph, max_length=300, min_length=50)
         return jsonify({"summarized_text": summarized_text})
 
     return render_template("index.html")
 
-def generate_summary(text, max_length=200, min_length=50):
+def generate_summary(text, max_length=300, min_length=50):
     # Generate the summary using the summarization pipeline
     # You can adjust max_length and min_length as per your requirements
     summary = summarizer(text, max_length=max_length, min_length=min_length, do_sample=False)[0]['summary_text']
