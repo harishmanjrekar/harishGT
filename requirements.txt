@@ -1,4 +1,2 @@
-flask
-transformers
-gunicorn==20.1.0
-
+Flask==2.0.1
+summa==1.2.0
