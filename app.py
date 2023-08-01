@@ -14,7 +14,7 @@ def index():
 
 def generate_summary(text, ratio=0.2):
     # Generate the summary using the TextRank algorithm
-    summary = summarizer.summarize(text, ratio=ratio,split=True)
+    summary = summarizer.summarize(text, ratio=ratio)
     return summary
 
 if __name__ == "__main__":
