@@ -16,7 +16,7 @@ function summarize() {
         // Display the summarized text in the chat box
         const chatBox = document.getElementById("chat-box");
         chatBox.innerHTML += `<div class="message user">You: ${inputText}</div>`;
-        chatBox.innerHTML += `<div class="message bot">Bot: ${data.summarized_text}</div>`; // Changed from "data.capitalized_text" to "data.summarized_text"
+        chatBox.innerHTML += `<div class="message bot">Bot: ${data.summarized_text}</div>`;
 
         // Scroll to the bottom of the chat box
         chatBox.scrollTop = chatBox.scrollHeight;
