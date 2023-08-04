@@ -7,19 +7,16 @@ app = Flask(__name__)
 def index():
     if request.method == "POST":
         paragraph = request.form.get("paragraph")
-        if len(paragraph) < 25 or len(paragraph.split(".")) == 0:
-            # If yes, return the input as the output
-            summarized_text = paragraph
-        else:
-            # Otherwise, use the summarization pipeline to generate the summary
-            summarized_text = generate_summary(paragraph)
-#        summarized_text = generate_summary(paragraph)   Using TextRank for summarization
+        summarized_text = generate_summary(paragraph)   Using TextRank for summarization
         return jsonify({"summarized_text": summarized_text})
 
     return render_template("index.html")
 
 def generate_summary(text, ratio=0.2):
     # Generate the summary using the TextRank algorithm
+    if len(text) < 25 or "." not in text:
+        return text
+        
     summary = summarizer.summarize(text, ratio=ratio)
     return summary
 
