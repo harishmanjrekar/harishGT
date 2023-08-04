@@ -1,10 +1,45 @@
-/* ... Previous CSS code ... */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.header {
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.chat-container {
+    display: flex;
+    align-items: stretch;
+}
 
 .input-container {
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-right: none;
+    border-radius: 10px 0 0 10px;
 }
 
 .output-container {
@@ -12,12 +47,69 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-radius: 0 10px 10px 0;
+}
+
+.chat-box {
+    width: 100%;
+    height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.user-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    resize: none;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    margin: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.output {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    height: 200px;
+    overflow-y: auto;
+    text-align: left;
+    color: #333;
 }
 
 .word-count {
     margin-bottom: 10px;
     font-size: 14px;
     font-weight: bold;
+    color: #333;
 }
-
-/* ... Previous CSS code ... */
