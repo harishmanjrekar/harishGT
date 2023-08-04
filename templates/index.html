@@ -12,11 +12,13 @@
         <div class="chat-container">
             <div class="chat-box">
                 <div class="input-section">
+                    <div class="word-count" id="input-word-count">Word count: 0</div>
                     <div class="message bot">Enter a paragraph to summarize:</div>
                     <textarea id="input-text" placeholder="Type your paragraph here..."></textarea>
                     <button onclick="summarize()">Summarize</button>
                 </div>
                 <div class="output-section">
+                    <div class="word-count" id="output-word-count">Word count: 0</div>
                     <div class="message bot">Summary:</div>
                     <div id="output-box" class="output"></div>
                 </div>
