@@ -25,12 +25,25 @@ function summarize() {
     });
 }
 
-function clearInput() {
-    // Clear the input textarea
+function clearAll() {
+    // Clear both input and output areas
     document.getElementById("input-text").value = "";
-}
-
-function clearOutput() {
-    // Clear the output area
     document.getElementById("output").innerHTML = "";
 }
+
+// Make the window fullscreen
+function makeFullscreen() {
+    const container = document.getElementById("fullscreen-container");
+    if (container.requestFullscreen) {
+        container.requestFullscreen();
+    } else if (container.mozRequestFullScreen) {
+        container.mozRequestFullScreen();
+    } else if (container.webkitRequestFullscreen) {
+        container.webkitRequestFullscreen();
+    } else if (container.msRequestFullscreen) {
+        container.msRequestFullscreen();
+    }
+}
+
+// Call the function to make the window fullscreen when the page loads
+window.onload = makeFullscreen;
