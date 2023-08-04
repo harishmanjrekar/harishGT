@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'summarybot'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E308D37729234CFCB7CA8BD538071455 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0CCCD8801D2D45668EB90160C4773ACD }}
