@@ -4,6 +4,7 @@ body, html {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    font-family: Arial, sans-serif;
 }
 
 .container {
@@ -14,6 +15,7 @@ body, html {
     align-items: center;
     justify-content: center;
     text-align: center;
+    background-color: #f8f8f8; /* Light gray background */
 }
 
 .header {
@@ -55,10 +57,21 @@ textarea {
     resize: none;
     padding: 5px;
     margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 button {
     padding: 10px;
+    background-color: #4CAF50; /* Green button background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049; /* Darker green on hover */
 }
 
 .output {
@@ -67,6 +80,8 @@ button {
     border: 1px solid #ccc;
     padding: 10px;
     overflow-y: auto;
+    background-color: white;
+    border-radius: 5px;
 }
 
 .user-input {
