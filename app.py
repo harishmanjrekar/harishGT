@@ -7,7 +7,7 @@ app = Flask(__name__)
 def index():
     if request.method == "POST":
         paragraph = request.form.get("paragraph")
-        if len(paragraph) < 25 or len(paragraph.split(".")) == 1:
+        if len(paragraph) < 25 or len(paragraph.split(".")) == 0:
             # If yes, return the input as the output
             summarized_text = paragraph
         else:
