@@ -15,12 +15,15 @@ function summarize() {
     .then(data => {
         // Display the summarized text in the output box
         const outputBox = document.getElementById("output-box");
-        outputBox.innerHTML = data.summarized_text;
-
-        // Clear the input textarea
-        document.getElementById("input-text").value = "";
+        outputBox.innerText = data.summarized_text;
     })
     .catch(error => {
         console.error("Error:", error);
     });
+}
+
+function clearText() {
+    // Clear the input and output textareas
+    document.getElementById("input-text").value = "";
+    document.getElementById("output-box").innerText = "";
 }
