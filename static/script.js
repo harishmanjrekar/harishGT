@@ -1,24 +1,24 @@
 function summarize() {
-    // Get the input text from the textarea
     const inputText = document.getElementById("input-text").value;
-
-    // Create a new FormData object and add the paragraph field
     const formData = new FormData();
     formData.append("paragraph", inputText);
 
-    // Make an asynchronous POST request to the Flask backend
     fetch("/", {
         method: "POST",
         body: formData,
     })
     .then(response => response.json())
     .then(data => {
-        // Display the summarized text in the output area
-        const outputArea = document.getElementById("output");
-        outputArea.innerHTML = data.summarized_text;
+        const chatBox = document.getElementById("chat-box");
+        chatBox.innerHTML += `<div class="message user">You: ${inputText}</div>`;
+        chatBox.innerHTML += `<div class="message bot">Bot: ${data.summarized_text}</div>`;
 
-        // Scroll to the bottom of the output area
-        outputArea.scrollTop = outputArea.scrollHeight;
+        chatBox.scrollTop = chatBox.scrollHeight;
+        document.getElementById("input-text").value = "";
+        
+        // Display the summarized text in the output section
+        const outputText = document.getElementById("output-text");
+        outputText.textContent = data.summarized_text;
     })
     .catch(error => {
         console.error("Error:", error);
@@ -26,24 +26,22 @@ function summarize() {
 }
 
 function clearAll() {
-    // Clear both input and output areas
-    document.getElementById("input-text").value = "";
-    document.getElementById("output").innerHTML = "";
+    const chatBox = document.getElementById("chat-box");
+    chatBox.innerHTML = '<div class="message bot">Enter a paragraph to summarize:</div>';
+    
+    const inputText = document.getElementById("input-text");
+    inputText.value = "";
+
+    const outputText = document.getElementById("output-text");
+    outputText.textContent = "";
 }
 
-// Make the window fullscreen
+// Function to make the container full screen
 function makeFullscreen() {
-    const container = document.getElementById("fullscreen-container");
-    if (container.requestFullscreen) {
-        container.requestFullscreen();
-    } else if (container.mozRequestFullScreen) {
-        container.mozRequestFullScreen();
-    } else if (container.webkitRequestFullscreen) {
-        container.webkitRequestFullscreen();
-    } else if (container.msRequestFullscreen) {
-        container.msRequestFullscreen();
-    }
+    const container = document.getElementById("container");
+    container.style.width = window.innerWidth + "px";
+    container.style.height = window.innerHeight + "px";
 }
 
-// Call the function to make the window fullscreen when the page loads
+// Call the function to make the container full screen when the page loads
 window.onload = makeFullscreen;
