@@ -82,6 +82,7 @@ button:hover {
     overflow-y: auto;
     background-color: white;
     border-radius: 5px;
+    text-align: left;
 }
 
 .user-input {
@@ -97,4 +98,10 @@ button:hover {
     width: 100%;
     height: 100%;
     overflow: hidden;
+}
+.message.bot {
+    padding: 5px 10px;
+    background-color: #4CAF50; /* Green box */
+    color: white;
+    border-radius: 5px;
 }
