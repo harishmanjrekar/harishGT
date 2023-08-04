@@ -13,18 +13,24 @@ function summarize() {
     })
     .then(response => response.json())
     .then(data => {
-        // Display the summarized text in the chat box
-        const chatBox = document.getElementById("chat-box");
-        chatBox.innerHTML += `<div class="message user">You: ${inputText}</div>`;
-        chatBox.innerHTML += `<div class="message bot">Bot: ${data.summarized_text}</div>`;
+        // Display the summarized text in the output area
+        const outputArea = document.getElementById("output");
+        outputArea.innerHTML = data.summarized_text;
 
-        // Scroll to the bottom of the chat box
-        chatBox.scrollTop = chatBox.scrollHeight;
-
-        // Clear the input textarea
-        document.getElementById("input-text").value = "";
+        // Scroll to the bottom of the output area
+        outputArea.scrollTop = outputArea.scrollHeight;
     })
     .catch(error => {
         console.error("Error:", error);
     });
+}
+
+function clearInput() {
+    // Clear the input textarea
+    document.getElementById("input-text").value = "";
+}
+
+function clearOutput() {
+    // Clear the output area
+    document.getElementById("output").innerHTML = "";
 }
