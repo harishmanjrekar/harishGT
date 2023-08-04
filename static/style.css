@@ -1,107 +1,23 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    font-family: Arial, sans-serif;
-}
+/* ... Previous CSS code ... */
 
-.container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-color: #f8f8f8; /* Light gray background */
-}
-
-.header {
-    margin-bottom: 30px;
-}
-
-.chat-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.chat-box {
-    width: 100%;
+.input-container {
     flex: 1;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
 }
 
-.input-section, .output-section {
-    width: 45%;
-    height: 100%;
-    padding: 10px;
+.output-container {
+    flex: 1;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-.input-section {
-    border-right: 1px solid #ccc;
-}
-
-textarea {
-    width: 100%;
-    height: 100%;
-    resize: none;
-    padding: 5px;
+.word-count {
     margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
 }
 
-button {
-    padding: 10px;
-    background-color: #4CAF50; /* Green button background */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #45a049; /* Darker green on hover */
-}
-
-.output {
-    width: 100%;
-    height: 100%;
-    border: 1px solid #ccc;
-    padding: 10px;
-    overflow-y: auto;
-    background-color: white;
-    border-radius: 5px;
-    text-align: left;
-}
-
-.user-input {
-    margin-top: 10px;
-}
-
-.fullscreen {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-.message.bot {
-    padding: 5px 10px;
-    background-color: #4CAF50; /* Green box */
-    color: white;
-    border-radius: 5px;
-}
+/* ... Previous CSS code ... */
