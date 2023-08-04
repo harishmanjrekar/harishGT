@@ -5,17 +5,22 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="container" id="fullscreen-container">
+    <div class="container" id="container">
         <div class="header">
             <h1>GT Summarizer</h1>
         </div>
-        <div class="input-container">
-            <textarea id="input-text" placeholder="Type your paragraph here..."></textarea>
-            <button onclick="summarize()">Summarize</button>
-        </div>
-        <div class="output-container">
-            <div class="output" id="output"></div>
-            <button onclick="clearAll()">Clear</button>
+        <div class="chat-container">
+            <div class="chat-box" id="chat-box">
+                <div class="message bot">Enter a paragraph to summarize:</div>
+            </div>
+            <div class="user-input">
+                <textarea id="input-text" placeholder="Type your paragraph here..."></textarea>
+                <button onclick="summarize()">Summarize</button>
+            </div>
+            <div class="output">
+                <p id="output-text"></p>
+                <button onclick="clearAll()">Clear</button>
+            </div>
         </div>
     </div>
     <script src="static/script.js"></script>
