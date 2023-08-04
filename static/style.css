@@ -21,29 +21,37 @@ body, html {
 }
 
 .chat-container {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .chat-box {
-    width: 80%;
-    height: 200px;
-    overflow-y: auto;
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 10px;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.user-input {
+.input-section, .output-section {
+    width: 45%;
+    height: 100%;
+    padding: 10px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+}
+
+.input-section {
+    border-right: 1px solid #ccc;
 }
 
 textarea {
-    width: 80%;
-    height: 100px;
+    width: 100%;
+    height: 150px;
     resize: none;
     padding: 5px;
     margin-bottom: 10px;
@@ -54,12 +62,15 @@ button {
 }
 
 .output {
-    margin-top: 20px;
-    width: 80%;
+    width: 100%;
+    height: 100%;
     border: 1px solid #ccc;
     padding: 10px;
-    height: 200px;
     overflow-y: auto;
+}
+
+.user-input {
+    margin-top: 10px;
 }
 
 .fullscreen {
