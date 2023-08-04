@@ -16,7 +16,7 @@ def generate_summary(text, ratio=0.2):
     # Generate the summary using the TextRank algorithm
     if len(text) < 25 or "." not in text:
         return text
-        
+    else:    
     summary = summarizer.summarize(text, ratio=ratio)
     return summary
 
