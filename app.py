@@ -12,7 +12,7 @@ def index():
 
     return render_template("index.html")
 
-def generate_summary(text, ratio=0.3):
+def generate_summary(text, ratio=0.2):
     # Generate the summary using the TextRank algorithm
     summary = summarizer.summarize(text, ratio=ratio)
     return summary
