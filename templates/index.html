@@ -5,18 +5,17 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="fullscreen-container">
         <div class="header">
             <h1>GT Summarizer</h1>
         </div>
         <div class="input-container">
             <textarea id="input-text" placeholder="Type your paragraph here..."></textarea>
             <button onclick="summarize()">Summarize</button>
-            <button onclick="clearInput()">Clear</button>
         </div>
         <div class="output-container">
             <div class="output" id="output"></div>
-            <button onclick="clearOutput()">Clear Output</button>
+            <button onclick="clearAll()">Clear</button>
         </div>
     </div>
     <script src="static/script.js"></script>
