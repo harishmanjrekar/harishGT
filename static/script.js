@@ -17,13 +17,24 @@ function summarize() {
         const outputBox = document.getElementById("output-box");
         outputBox.innerText = data.summarized_text;
 
-        // Update word count for input and output sections
-        countWords();
+        // Calculate word count for input and output sections
+        const inputWordCount = inputText.trim().split(/\s+/).length;
+        const outputWordCount = data.summarized_text.trim().split(/\s+/).length;
+
+        // Calculate percentage reduction
+        const percentageReduction = ((inputWordCount - outputWordCount) / inputWordCount) * 100;
+
+        // Display word count and percentage reduction above the output box
+        const outputWordCountElement = document.getElementById("output-word-count");
+        outputWordCountElement.textContent = `Word count: ${outputWordCount}`;
+        const percentageReductionElement = document.getElementById("percentage-reduction");
+        percentageReductionElement.textContent = `Percentage Reduction: ${percentageReduction.toFixed(2)}%`;
     })
     .catch(error => {
         console.error("Error:", error);
     });
 }
+
 
 function clearText() {
     // Clear the input and output textareas
