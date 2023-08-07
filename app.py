@@ -16,9 +16,15 @@ def index():
 
     return render_template("index.html")
 
-def generate_summary(text):
+def generate_summary(text,percentage=30):
+    num_words_original = len(text.split())
+
+    # Calculate the desired number of words for the specified percentage
+    num_words_desired = int(num_words_original * (percentage / 100))
+    mx=num_words_desired+50
+    mn=num_words_desired-10
     # Generate the summary using the summarization pipeline (Pegasus)
-    summary = summarizer(text, max_length=350, min_length=20, do_sample=True)[0]["summary_text"]
+    summary = summarizer(text, max_length=mx, min_length=mn, do_sample=True)[0]["summary_text"]
     return summary
 
 if __name__ == "__main__":
