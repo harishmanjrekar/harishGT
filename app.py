@@ -18,7 +18,7 @@ def index():
 
 def generate_summary(text):
     # Generate the summary using the summarization pipeline (Pegasus)
-    summary = summarizer(text, max_length=150, min_length=50, do_sample=True)[0]["summary_text"]
+    summary = summarizer(text, max_length=350, min_length=20, do_sample=True)[0]["summary_text"]
     return summary
 
 if __name__ == "__main__":
