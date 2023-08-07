@@ -105,3 +105,10 @@ button:hover {
     color: white;
     border-radius: 5px;
 }
+.message1.bot{
+    padding: 5px 10px;
+    background-color: #0000FF; /* Green box */
+    color: white;
+    border-radius: 5px;
+}
+
