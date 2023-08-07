@@ -44,4 +44,8 @@ function countWords() {
     const outputWordCount = outputText.trim().split(/\s+/).length;
     const outputWordCountElement = document.getElementById("output-word-count");
     outputWordCountElement.textContent = `Word count: ${outputWordCount}`;
+    // Calculate percentage reduction and display it
+    const percentageReduction = ((inputWordCount - outputWordCount) / inputWordCount) * 100;
+    const percentageReductionElement = document.getElementById("percentage-reduction");
+    percentageReductionElement.textContent = `Percentage Reduction: ${percentageReduction.toFixed(2)}%`;
 }
