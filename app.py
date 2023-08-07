@@ -22,7 +22,7 @@ def generate_summary(text):
     # Calculate the desired number of words for the specified percentage
 
     # Generate the summary using the summarization pipeline (Pegasus)
-    summary = summarizer(text, max_length=1000, min_length=45, do_sample=True,temperature=0.1)[0]["summary_text"]
+    summary = summarizer(text, max_length= (num_words_original*0.35), min_length=(num_words_original*0.2), do_sample=True)[0]["summary_text"]
     return summary
 
 if __name__ == "__main__":
