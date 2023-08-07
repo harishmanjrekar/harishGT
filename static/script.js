@@ -17,24 +17,14 @@ function summarize() {
         const outputBox = document.getElementById("output-box");
         outputBox.innerText = data.summarized_text;
 
-        // Calculate word count for input and output sections
-        const inputWordCount = inputText.trim().split(/\s+/).length;
-        const outputWordCount = data.summarized_text.trim().split(/\s+/).length;
-
-        // Calculate percentage reduction
-        const percentageReduction = ((inputWordCount - outputWordCount) / inputWordCount) * 100;
-
-        // Display word count and percentage reduction above the output box
-        const outputWordCountElement = document.getElementById("output-word-count");
-        outputWordCountElement.textContent = `Word count: ${outputWordCount}`;
-        const percentageReductionElement = document.getElementById("percentage-reduction");
-        percentageReductionElement.textContent = `Percentage Reduction: ${percentageReduction.toFixed(2)}%`;
+        // Update word count for input and output sections
+        updateInputWordCount();
+        updateOutputWordCountAndReduction();
     })
     .catch(error => {
         console.error("Error:", error);
     });
 }
-
 
 function clearText() {
     // Clear the input and output textareas
@@ -42,20 +32,29 @@ function clearText() {
     document.getElementById("output-box").innerText = "";
 
     // Update word count to 0 after clearing text
-    countWords();
+    updateInputWordCount();
+    updateOutputWordCountAndReduction();
 }
 
-function countWords() {
+function countWords(text) {
+    return text.trim().split(/\s+/).length;
+}
+
+function updateInputWordCount() {
     const inputText = document.getElementById("input-text").value;
-    const inputWordCount = inputText.trim().split(/\s+/).length;
+    const inputWordCount = countWords(inputText);
     const inputWordCountElement = document.getElementById("input-word-count");
     inputWordCountElement.textContent = `Word count: ${inputWordCount}`;
+}
 
+function updateOutputWordCountAndReduction() {
     const outputText = document.getElementById("output-box").textContent;
-    const outputWordCount = outputText.trim().split(/\s+/).length;
+    const outputWordCount = countWords(outputText);
     const outputWordCountElement = document.getElementById("output-word-count");
     outputWordCountElement.textContent = `Word count: ${outputWordCount}`;
-    // Calculate percentage reduction and display it
+
+    const inputText = document.getElementById("input-text").value;
+    const inputWordCount = countWords(inputText);
     const percentageReduction = ((inputWordCount - outputWordCount) / inputWordCount) * 100;
     const percentageReductionElement = document.getElementById("percentage-reduction");
     percentageReductionElement.textContent = `Percentage Reduction: ${percentageReduction.toFixed(2)}%`;
