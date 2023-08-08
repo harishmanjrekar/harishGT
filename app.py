@@ -18,11 +18,13 @@ def index():
 
 def generate_summary(text):
     num_words_original = len(text.split())
+    mx= int(num_words_original * (35 / 100))
+    mn= int(num_words_original * (20 / 100))
 
     # Calculate the desired number of words for the specified percentage
 
     # Generate the summary using the summarization pipeline (Pegasus)
-    summary = summarizer(text, max_length= (num_words_original*0.35), min_length=(num_words_original*0.2), do_sample=True)[0]["summary_text"]
+    summary = summarizer(text, max_length= mx , min_length=mn , do_sample=True)[0]["summary_text"]
     return summary
 
 if __name__ == "__main__":
