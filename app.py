@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify, render_template
-from summa import summarizer
+from gensim.summarization import summarize
 
 app = Flask(__name__)
 
@@ -14,7 +14,17 @@ def index():
 
 def generate_summary(text, ratio=0.2):
     # Generate the summary using the TextRank algorithm
-    summary = summarizer.summarize(text, ratio=ratio)
+    summary = summarize(
+        text,
+        ratio=ratio,
+        word_count=None,  # Specify a word count limit here
+        split=False,  # Set to True if you want sentence splitting
+        remove_redundancy=True,
+        diversity=0.5,  # Set a diversity parameter for sentence selection
+        normalization=None,  # Specify a normalization function
+        similarity="jaccard",  # Use "cosine" or "jaccard" for similarity
+        min_length=5,  # Specify a minimum sentence length
+    )
     return summary
 
 if __name__ == "__main__":
