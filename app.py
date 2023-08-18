@@ -23,7 +23,7 @@ def generate_summary(text, ratio=0.2):
         diversity=0.5,  # Set a diversity parameter for sentence selection
         normalization=None,  # Specify a normalization function
         similarity="jaccard",  # Use "cosine" or "jaccard" for similarity
-        min_length=5,  # Specify a minimum sentence length
+        min_length=5  # Specify a minimum sentence length
     )
     return summary
 
