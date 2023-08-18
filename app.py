@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify, render_template
-from gensim.summarization import summarize
+from gensim.summarization.summarizer import summarize
 
 app = Flask(__name__)
 
